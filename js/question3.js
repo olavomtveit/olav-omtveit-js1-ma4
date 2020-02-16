@@ -12,5 +12,12 @@ fetch(gameUrl)
     })
 
     function createGameDetails(json){
-        let html = "";
+        const getGameName = document.querySelector("h1");
+        const getGameImg = document.querySelector(".image");
+        const gameImg = json.background_image;
+        const gameDescription = document.querySelector(".description");
+
+        getGameName.innerHTML = json.name;
+        getGameImg.style.backgroundImage = `url(${gameImg})`;
+        gameDescription.innerHTML = json.description;
     }
